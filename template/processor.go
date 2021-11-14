@@ -9,10 +9,7 @@ import (
 	"sync"
 
 	"github.com/cacastelmeli/eir/context"
-)
-
-const (
-	templateDirName = ".template"
+	"github.com/cacastelmeli/eir/util"
 )
 
 type Processor struct {
@@ -104,7 +101,7 @@ func (processor *Processor) processFile(rootDir, targetPath, templateFilename st
 }
 
 func (processor *Processor) ProcessTemplate(templateName, targetPath string) error {
-	rootDir := path.Join(templateDirName, templateName)
+	rootDir := util.PathCacheTemplate(templateName)
 	filenames, err := collectTemplateFilenames(rootDir)
 	processErrors := []error{}
 

@@ -1,5 +1,6 @@
 package config
 
 type ProjectConfig struct {
-	Template string `yaml:"template"`
+	// Template GitHub's remote
+	TemplateRemote string `yaml:"template"`
 }
